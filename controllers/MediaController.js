@@ -13,20 +13,21 @@ module.exports = {
   //       .catch(err => res.status(422).json(err));
   //   },
   create: function(req, res) {
-    // console.log('req.user: ', req.user)
-    // console.log('req.params: ', req.params.media);
-    const params = req.params.type;
-    // const params = JSON.parse(req.params.media);
-    console.log('params: ', typeof params)
-    console.log(params);
-    const media = {
-      media: req.params.type,
-      uri: req.params.uri
-    };
-    // res.end()
 
+    console.log('Posting New Media !')
+    let params = JSON.parse(req.params.media)
+    console.log(params)
+
+    const media = {
+      media: params.type,
+      uri: params.uri
+    };
+    
     db.Media.create(media)
-      .then(dbMedia => res.json(dbMedia))
+      .then(dbMedia => {
+        console.log('Sucessful New Media Post !')
+        res.json(dbMedia)
+      })
       .catch(err => res.status(422).json(err));
   }
   //   update: function(req, res) {

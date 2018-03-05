@@ -3,7 +3,7 @@ const mediaController = require("../../controllers/MediaController");
 
 // Matches with "/api/articles"
 router
-    .route("/new/:type/:uri")
+    .route("/new/:media")
     .post(mediaController.create);
 
 router

@@ -9,15 +9,22 @@ const cors = require("cors");
 const app = express();
 
 // app.use(cors());
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE");
-  next();
-});
+
+// router.use(function*(next) {
+//   // everything json
+//   this.type = "json";
+//   this.headers["accept"] = "application/json";
+//   yield next;
+// });
+// app.use(function(req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept"
+//   );
+//   res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE");
+//   next();
+// });
 
 // Logger that outputs all requests into the console
 app.use(morgan("combined"));
