@@ -1,6 +1,7 @@
 import express from "express";
 import morgan from "morgan";
 import mongoose from "mongoose";
+import bodyParser from 'body-parser'
 const routes = require("./routes");
 const PORT = process.env.PORT || 3001;
 const cors = require("cors");
@@ -8,7 +9,12 @@ const cors = require("cors");
 // Initialize http server
 const app = express();
 
-// app.use(cors());
+// Configure body parser for AJAX requests
+// app.use(express.bodyParser());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+app.use(cors());
 
 // router.use(function*(next) {
 //   // everything json

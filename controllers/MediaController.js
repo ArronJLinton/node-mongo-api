@@ -13,17 +13,21 @@ module.exports = {
   //       .catch(err => res.status(422).json(err));
   //   },
   create: function(req, res) {
+    console.log('POSTING NEW MEDIA OBJECT !')
+    console.log(req.body)
+    // let data = JSON.parse(req.params.media)
 
-    console.log('Posting New Media !')
-    let params = JSON.parse(req.params.media)
-    console.log(params)
+    // console.log("Media Object: ",  data);
 
-    const media = {
-      media: params.type,
-      uri: params.uri
-    };
+    // let params = JSON.parse(req.params.media)
+    // console.log(params)
+
+    // const media = {
+    //   type: params.type,
+    //   uri: params.uri
+    // };
     
-    db.Media.create(media)
+    db.Media.create(req.body)
       .then(dbMedia => {
         console.log('Sucessful New Media Post !')
         res.json(dbMedia)

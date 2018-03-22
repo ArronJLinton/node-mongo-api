@@ -2,7 +2,7 @@ import mongoose, { Schema } from "mongoose";
 
 // Define media schema
 var MediaSchema = new Schema({
-  media: {
+  type: {
     type: String,
     required: true
   },
