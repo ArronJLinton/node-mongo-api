@@ -6,31 +6,14 @@ const routes = require("./routes");
 const PORT = process.env.PORT || 3001;
 const cors = require("cors");
 
-// Initialize http server
+// Initialize express
 const app = express();
 
 // Configure body parser for AJAX requests
-// app.use(express.bodyParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use(cors());
-
-// router.use(function*(next) {
-//   // everything json
-//   this.type = "json";
-//   this.headers["accept"] = "application/json";
-//   yield next;
-// });
-// app.use(function(req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header(
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept"
-//   );
-//   res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE");
-//   next();
-// });
 
 // Logger that outputs all requests into the console
 app.use(morgan("combined"));
