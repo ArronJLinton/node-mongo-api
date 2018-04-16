@@ -8,7 +8,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   findByMatchId: function(req, res) {
-    db.Media.findById(req.params.matchId)
+    db.Media.find(req.params.matchId)
       .then(dbMedia => res.json(dbMedia))
       .catch(err => res.status(422).json(err));
   },
