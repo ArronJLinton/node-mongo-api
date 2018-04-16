@@ -1,5 +1,5 @@
-import mongoose, { Schema } from "mongoose";
-
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 // Define media schema
 var MediaSchema = new Schema({
   type: {

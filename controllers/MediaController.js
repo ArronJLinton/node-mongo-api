@@ -7,11 +7,11 @@ module.exports = {
       .then(dbMedia => res.json(dbMedia))
       .catch(err => res.status(422).json(err));
   },
-  //   findById: function(req, res) {
-  //     db.Article.findById(req.params.id)
-  //       .then(dbArticle => res.json(dbArticle))
-  //       .catch(err => res.status(422).json(err));
-  //   },
+  findByMatchId: function(req, res) {
+    db.Media.findById(req.parms.matchId)
+      .then(dbMedia => res.json(dbMedia))
+      .catch(err => res.status(422).json(err));
+  },
   create: function(req, res) {
     console.log('POSTING NEW MEDIA OBJECT !')
     console.log(req.body)

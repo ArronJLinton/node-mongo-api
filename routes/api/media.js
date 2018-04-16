@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const mediaController = require("../../controllers/MediaController");
 
-// Matches with "/api/articles"
+// Matches with "/api/media"
 router
     .route("/new")
     .post(mediaController.create);
@@ -11,9 +11,9 @@ router
     .get(mediaController.findAll);
 
 // Matches with "/api/articles/:id"
-// router
-//   .route("/:id")
-//   .get(articleController.findById)
+router
+  .route("/:matchId")
+  .get(mediaController.findByMatchId)
 //   .put(articleController.update)
 //   .delete(articleController.remove);
 

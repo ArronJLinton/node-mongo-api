@@ -1,9 +1,9 @@
-import express from "express";
-import morgan from "morgan";
-import mongoose from "mongoose";
-import bodyParser from 'body-parser'
+const express = require("express");
+const morgan = require("morgan");
+const mongoose = require("mongoose");
+const bodyParser = require('body-parser');
 const routes = require("./routes");
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 4000;
 const cors = require("cors");
 
 // Initialize express
