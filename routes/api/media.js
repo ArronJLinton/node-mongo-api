@@ -15,6 +15,9 @@ router
   .route("/:matchId")
   .get(mediaController.findByMatchId)
 //   .put(articleController.update)
-//   .delete(articleController.remove);
+
+router
+  .route("/deleteAll")  
+  .delete(mediaController.remove);
 
 module.exports = router;

@@ -33,16 +33,16 @@ module.exports = {
         res.json(dbMedia)
       })
       .catch(err => res.status(422).json(err));
-  }
+  },
   //   update: function(req, res) {
   //     db.Article.findOneAndUpdate({ _id: req.params.id }, req.body)
   //       .then(dbArticle => res.json(dbArticle))
   //       .catch(err => res.status(422).json(err));
   //   },
-  //   remove: function(req, res) {
-  //     db.Article.findById({ _id: req.params.id })
-  //       .then(dbArticle => dbArticle.remove())
-  //       .then(dbArticle => res.json(dbArticle))
-  //       .catch(err => res.status(422).json(err));
-  //   }
+    remove: function(req, res) {
+      db.Media.find()
+        .then(dbMedia => dbMedia.remove())
+        .then(dbMedia => res.json(dbMedia))
+        .catch(err => res.status(422).json(err));
+    }
 };
