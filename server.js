@@ -25,9 +25,11 @@ app.use(routes);
 mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/fucci_db",
+  process.env.MONGODB_URI ||
   "mongodb: //arron:root@ds013981.mlab.com:13981/fucci_db"
 );
+
+// "mongodb://localhost/fucci_db"
 
 // Launch the server on port 3000
 const server = app.listen(PORT, () => {
