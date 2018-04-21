@@ -26,6 +26,7 @@ mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/fucci_db",
+  "mongodb: //arron:root@ds013981.mlab.com:13981/fucci_db"
 );
 
 // Launch the server on port 3000
